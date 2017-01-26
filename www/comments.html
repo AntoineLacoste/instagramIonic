@@ -1,0 +1,31 @@
+<ion-view>
+    <ion-nav-bar class="bar-royal">
+        <ion-nav-title>Comments</ion-nav-title>
+        <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button></ion-nav-bar>
+    <ion-content class="has-footer">
+        <ion-refresher
+                pulling-text="Pull to refresh..."
+                on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <div class="list" ng-repeat="comment in comments">
+            <a class="item item-avatar">
+                <img ng-src="{{ comment.fromUser.profilePictureURL }}">
+                <h2>{{ comment.fromUser.displayName}}</h2>
+                <button ng-if="comment.fromUser.id == currentUser.id" class="button ion-trash-a" ng-click="deleteComment(comment)"></button>
+            </a>
+            <div class="item item-body">
+                <p>{{ comment.message}}</p>
+            </div>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-balanced">
+        <input type="text" placeholder="Message..." class="item-input" ng-model="commentText">
+        <div class="buttons" ng-click="postComment()" ng-class="" style="margin-left: 5px;">
+            <button class="button">Post comment</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

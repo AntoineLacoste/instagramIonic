@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-bar class="bar-royal"><ion-nav-title>Instagram</ion-nav-title></ion-nav-bar>
+    <ion-tabs class="tabs-icon-bottom bar-royal">
+        <ion-tab icon-on="ion-ios-home" icon-off="ion-ios-home-outline" title="Image list" href="#/root/imagesList">
+            <ion-nav-view name="imageListView"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab icon-on="ion-ios-camera" icon-off="ion-ios-camera-outline" title="Add a post" href="#/root/addPost">
+            <ion-nav-view name="addPostView"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab icon-on="ion-ios-person" icon-off="ion-ios-person-outline" title="Profile" href="#/root/profile">
+            <ion-nav-view name="profileView"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+
+    <ion-nav-view name="contentView"></ion-nav-view>
+</ion-view>

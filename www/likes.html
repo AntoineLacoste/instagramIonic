@@ -1,0 +1,21 @@
+<ion-view>
+    <ion-nav-bar class="bar-royal">
+        <ion-nav-title>Comments</ion-nav-title>
+        <ion-nav-back-button class="button-clear">
+            <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-refresher
+                pulling-text="Pull to refresh..."
+                on-refresh="doRefresh()">
+        </ion-refresher>
+        <div class="list list-inset" ng-repeat="like in likes">
+            <div class="item">
+                <img ng-src="{{ like.fromUser.profilePictureURL }}">
+                <h2>{{ like.fromUser.displayName}}</h2>
+                <p>{{ like.message}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
